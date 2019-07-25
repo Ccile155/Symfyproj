@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+{{ parent() }}
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+
+    {% block accueil %}
+
+    {% endblock accueil %}
+
+
+
+
+{% endblock body %}
+
+
+
+
+
+{# A mettre dans ma page CV
+{% block stylesheets %}
+   {{ parent() }}
+    {{ encore_entry_link_tags('checkout') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('checkout') }}
+{% endblock %} #}
