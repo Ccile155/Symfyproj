@@ -5,3 +5,29 @@ body {
 img{
     width: 100%;
 }
+
+.spacer{
+    margin-top: 20px;
+}
+
+.foot{
+    width: 75%;
+    margin: auto;
+}
+
+.navbar-brand{
+    padding-left: 10px;
+    font-family: 'Monoton', cursive;
+}
+
+#fond{
+    position: relative;
+    z-index: -1;
+}
+
+.container{
+    position: absolute;
+    z-index: 1;
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%);
+}

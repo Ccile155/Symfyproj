@@ -7,55 +7,82 @@
         {% block stylesheets %}
         {# 'app' must match the first argument to addEntry() in webpack.config.js #}
         {{ encore_entry_link_tags('app') }}
+        <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet"> 
         {% endblock %}
     </head>
     <body>
-        {% block body %}
         
-            {% block nav %}
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="/">SymfonyProject</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-            
-                <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">About the author</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Inscription</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
-                </div>
-            </nav>
-            {% endblock nav %}
+        {% block nav %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Symfony<br>Project</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
         
-        {% block accueil %}
-        <img src="{{ asset('images/explode.jpg') }}" alt="accueil">
-        {% endblock accueil %}
+            <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="/home"><i class="material-icons">home</i> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#"><i class="material-icons">assignment_ind</i> My CV</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#"><i class="material-icons">create</i> Inscription</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#"><i class="material-icons">fingerprint</i> Login</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">format_color_fill</i> Couleurs</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#" id="000000"><img src="{{ asset('images/default.png')}}" alt="default"> Default</a>
+                        <a class="dropdown-item" href="#" id="30A2B8"><img src="{{ asset('images/info.png')}}" alt="info" style="height:15px;"> Info</a>
+                        <a class="dropdown-item" href="#" id="ccffee"><img src="{{ asset('images/mint.png')}}" alt="Mint"> Mint</a>
+                        <a class="dropdown-item" href="#" id="FBC10A"><img src="{{ asset('images/warning.png')}}" alt="warning" style="height:15px;"> Warning</a>
+                        <a class="dropdown-item" href="#" id="FFCCFF"><img src="{{ asset('images/pink.png')}}" alt="pink"> Pink</a>
+                        <a class="dropdown-item" href="#" id="F8F9FA"><img src="{{ asset('images/light.png')}}" alt="light"> Light</a>
+                    </div>
+                    </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            </div>
+        </nav>
+        {% endblock nav %}
         
+    {% block body %}
+        <img src="{{ asset('images/explode.jpg') }}" alt="accueil" id="fond">
+
+    {% endblock body %}
        
-        
-            {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
 
-            <!-- Renders app.js & a webpack runtime.js file
-                <script src="/build/runtime.js"></script>
-                <script src="/build/app.js"></script> -->
-            {% endblock javascripts %}
+    {% block footer %}
+    <footer>
+        <div class="foot">
+            <ul class="list-unstyled">
+                <li class="float-lg-right"><a href="#top">Back to top</a></li>
+                <li><a href="https://github.com/thomaspark/bootswatch/"> <a href="https://github.com/" target="_blank"><image class="image" nom="LogoGitHub" src="{{ asset('images/LogoGithub.png')}}" alt="LogoGitHub" title="LogoGitHub"></a>
+                    <a href="https://developer.mozilla.org/fr/" target="_blank"><image class="image" nom="LogoMozilla" src="{{ asset('images/LogoMozilla.png')}}" alt="LogoMozilla" title="LogoMozilla"/></a>
+                <li>&copy; 2019 CV Creator, made by <a href="https://www.linkedin.com/in/minh-khoa-nguyen-27396690/" target="_blank">Khoa</a>, <a href="https://www.linkedin.com/in/juan-rosso-6b674b3b/" target="_blank">Juan</a>, <a href="https://www.linkedin.com/in/sureshblessie/" target="_blank">Blessie</a>, <a href="https://www.linkedin.com/in/benjamin-dufils-bb2098131/" target="_blank">Benjamin</a> et <a href="https://www.linkedin.com/in/c%C3%A9cile-iss-3a27238b/" target="_blank">Cécile</a>.
+                <li>Based on <a href="https://getbootstrap.com">Bootstrap</a>. Icons from <a href="https://fontawesome.com/">Font Awesome</a>. Web fonts from <a href="https://fonts.google.com/">Google</a>. <a class="float-lg-right" href="../help/#donate">Donate</a></li>
+            </ul>
+           <!-- <p>&copy; 2019 CV Creator, made by <a href="https://www.linkedin.com/in/minh-khoa-nguyen-27396690/" target="_blank">Khoa</a>, <a href="https://www.linkedin.com/in/juan-rosso-6b674b3b/" target="_blank">Juan</a>, <a href="https://www.linkedin.com/in/sureshblessie/" target="_blank">Blessie</a>, <a href="https://www.linkedin.com/in/benjamin-dufils-bb2098131/" target="_blank">Benjamin</a> et <a href="https://www.linkedin.com/in/c%C3%A9cile-iss-3a27238b/" target="_blank">Cécile</a>.</p> -->
+            
+        </div>
+    </footer>
+    {% endblock footer %}
 
-        {% endblock body %}
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    
+    <!-- Renders app.js & a webpack runtime.js file
+        <script src="/build/runtime.js"></script>
+        <script src="/build/app.js"></script> -->
+    {% endblock javascripts %}
+
+
     </body>
 </html>
