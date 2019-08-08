@@ -7,7 +7,7 @@
         {% block stylesheets %}
         {# 'app' must match the first argument to addEntry() in webpack.config.js #}
         {{ encore_entry_link_tags('app') }}
-        <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         {% endblock %}
     </head>
     <body>
@@ -34,7 +34,7 @@
                 <a class="nav-link" href="#"><i class="material-icons">fingerprint</i> Login</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">format_color_fill</i> Couleurs</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">palette</i> Couleurs</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#" id="000000"><img src="{{ asset('images/default.png')}}" alt="default"> Default</a>
                         <a class="dropdown-item" href="#" id="30A2B8"><img src="{{ asset('images/info.png')}}" alt="info" style="height:15px;"> Info</a>
